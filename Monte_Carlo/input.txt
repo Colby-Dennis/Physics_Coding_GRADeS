@@ -1,0 +1,4 @@
+numberOfParticles, 1000000
+numberOfSsteps, 6
+materialThickness, 15.0
+travelDistance, 5.0

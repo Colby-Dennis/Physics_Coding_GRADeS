@@ -1,15 +1,30 @@
 #include <iostream>
 #include <stdlib.h>
 #include <math.h>
+#include <fstream>
+#include <string>
 
 #define PI 3.14159265
 
+using namespace std;
+
 int main() {
 
-    int number_of_particles = 1000000;
-    int number_of_steps = 6;
-    double material_thickness = 15.0;
-    double travel_distance = 5.0;
+    string str;
+    int number_of_particles;
+    int number_of_steps;
+    double material_thickness;
+    double travel_distance;
+
+    ifstream indata;
+    indata.open("input.txt");
+    indata >> str >> number_of_particles;
+    indata >> str >> number_of_steps;
+    indata >> str >> material_thickness;
+    indata >> str >> travel_distance;
+    indata.close();
+
+
     int escaped_particles = 0;
 
     for (int i = 0; i < number_of_particles; i++) {
@@ -32,8 +47,8 @@ int main() {
         }
     }
 
-    std::cout<<"Escaped Particles: "<<escaped_particles<<std::endl;
-    std::cout<<"Percent Escaped: "<<double(escaped_particles)*100/double(number_of_particles)<<std::endl;
+    cout<<"Escaped Particles: "<<escaped_particles<<endl;
+    cout<<"Percent Escaped: "<<double(escaped_particles)*100/double(number_of_particles)<<endl;
 
     return 0;
 }
