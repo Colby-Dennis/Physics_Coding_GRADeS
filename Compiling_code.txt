@@ -1,0 +1,13 @@
+To compile c++ code using gcc
+
+g++ -o name name.cpp
+
+To compile fortran code
+
+gfortran -o name name.f90
+
+To run the compiled code
+
+./name
+
+Replace name with whatever your file is called.
